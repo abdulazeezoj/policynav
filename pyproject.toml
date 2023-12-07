@@ -1,0 +1,80 @@
+[tool.poetry]
+name = "policynav-demo"
+version = "0.0.0"
+description = "AI for efficient access, processing, and analysis of diverse policy documents, empowering foreign policy experts in decision-making."
+authors = ["Abdulazeez Jimoh <abdulazeezojimoh@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "policynav"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+tiktoken = "^0.5.1"
+streamlit = "^1.28.2"
+openai = "^1.3.6"
+pydantic = "^2.5.2"
+pydantic-settings = "^2.1.0"
+cohere = "^4.37"
+google-generativeai = "^0.2.2"
+chromadb = "^0.4.18"
+pymupdf = "^1.23.7"
+
+
+[tool.poetry.group.dev.dependencies]
+commitizen = "^3.12.0"
+ipykernel = "^6.27.1"
+pre-commit = "^3.5.0"
+pytest = "^7.4.3"
+ruff = "^0.1.7"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "v$version"
+version_scheme = "semver"
+version_provider = "poetry"
+update_changelog_on_bump = true
+major_version_zero = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+line-length = 100
+indent-width = 4
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
