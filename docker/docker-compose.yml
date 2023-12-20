@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  weaviate:
+    image: chatdocx/weaviate:1.23.0
+    build:
+      context: ./weaviate
+      dockerfile: Dockerfile
+    ports:
+    - 7650:8080
+    - 50051:50051
+    volumes:
+    - core-vol:/var/lib/weaviate
+    networks:
+      - core-net
+    restart: 
+      on-failure:0
+    environment:
+      OPENAI_APIKEY: $OPENAI_API_KEY
+      QUERY_DEFAULTS_LIMIT: 25
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
+      PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
+      DEFAULT_VECTORIZER_MODULE: 'text2vec-openai'
+      ENABLE_MODULES: 'text2vec-openai'
+
+volumes:
+  core-vol:
+
+networks:
+  core-net:
