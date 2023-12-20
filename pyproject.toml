@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "policynav-demo"
-version = "0.0.1"
+name = "chatdox-demo"
+version = "0.0.2"
 description = "AI for efficient access, processing, and analysis of diverse policy documents, empowering foreign policy experts in decision-making."
 authors = ["Abdulazeez Jimoh <abdulazeezojimoh@gmail.com>"]
 readme = "README.md"
-packages = [{ include = "policynav"}]
+packages = [{ include = "chatdox"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"

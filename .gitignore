@@ -12,7 +12,6 @@ desktop.ini
 
 # Development 
 __pycache__/
-.mypy_cache
 .env
 .venv/
 venv/
