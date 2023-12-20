@@ -15,8 +15,8 @@ pydantic = "^2.5.2"
 pydantic-settings = "^2.1.0"
 cohere = "^4.37"
 google-generativeai = "^0.2.2"
-chromadb = "^0.4.18"
 pymupdf = "^1.23.7"
+weaviate-client = "^3.26.0"
 
 
 [tool.poetry.group.dev.dependencies]
